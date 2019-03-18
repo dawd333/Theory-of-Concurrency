@@ -1,0 +1,28 @@
+zad2:
+Musimy zastosować while, ponieważ gdybyśmy użyli if'a, to nie sprawdzilibyśmy ponownie warunku po wybudzeniu czekającego wątku. W tym czasie inny wątek mógłby zmienić wartość tego warunku i w konsekwencji oba wątki używałaby zasobu dzielonego, co może doprowadzić do wyścigu.
+
+zad3:
+Tak, semafor binarny jest szczególnym przypadkiem semafora ogólnego, takiego który pozwala na maksymalny dostęp tylko jednego wątku do danego zasobu dzielonego.
+
+zad5:
+Wykorzystałem następujące rozwiązania problemu 5-ciu filozofów: rozwiązanie z użyciem kelnera, rozwiązanie przy użyciu hierarchii zasobów oraz rozwiązanie Chandy/Mistra. Wybrałem wyżej wymienione algorytmy ponieważ były najbardziej intuicyjne oraz zasady ich działania zostały najlepiej opisane w dostępnych źródłach.
+
+
+
+Wykorzystane klasy do rozwiązania danego zadania (struktura kodu):
+
+zad1:
+Counter - współdzielony licznik; BinarySemaphore - implementacja semafora binarnego; Race i CounterThread - klasy użyte w jeszcze nie zsynchronizowanym Wyścigu; SynchronizedRace i SynchronizedCounterThread - klasy użyte do synchronizacji programu Wyścig z użyciem semafora binarnego.
+
+zad2:
+BinarySemaphore - w tej klasie znajduję się zarówno implementacja z użyciem if'a, jak i while'a potrzebna do wykonania eksperymentu. W celu jego przeprowadzenia wystarczy odpowiednie fragmenty tej klasy odkomentować / zakomentować.
+
+zad3:
+CountingSemaphore - implementacja semafora licznikowego(ogólnego) przy użyciu semafora binarnego.
+
+zad4:
+Philosopher0 - implementacja problemu 5-ciu filozofów mogąca prowadzić do zakleszczenia.
+Philosopher1 i Waiter - rozwiązaniu problemu 5-ciu filozofów przy pomocy kelnera.
+Philosopher2 - rozwiązaniu problemu 5-ciu filozofów przy użyciu hierarchi zasobów.
+Philosopher3 - rozwiązaniu problemu 5-ciu filozofów Chandy/Mistra.
+PhilosopherTest - klasa odpowiedzialna za odpowiednie przygotowanie i pokazanie, że dane algorytmy działają, poprzez wywołanie odpowiadających metod z main'a, inicjalizuje ona elementy początkowe niezbędne do prawidłowego działania wyżej wymionionych algorytmow.

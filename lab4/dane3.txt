@@ -1,0 +1,7 @@
+a: x=y+v
+b: y=x+z
+c: z=y+w+v
+d: w=z+v
+e: v=x+z+w
+A={a,b,c,d,e}
+w=acebdac
